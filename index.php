@@ -32,13 +32,20 @@
               Login
             </div>
             <div class="card-body">
-              <form action="validaLogin.php method="post"">
+              <form action="validaLogin.php" method="POST">
                 <div class="form-group">
                   <input name="email" type="email" class="form-control" placeholder="E-mail">
                 </div>
                 <div class="form-group">
                   <input name="password" type="password" class="form-control" placeholder="Senha">
                 </div>
+                  <? if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
+
+                    <div class="text-danger">
+                      Usuário ou senha invalido(s)
+                    </div>
+                    
+                  <? } ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>
