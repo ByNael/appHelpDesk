@@ -36,10 +36,14 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                  <img src="imgs/formulario_abrir_chamado.png" width="70" height="70">
+                  <a href="abrirChamado.php">
+                    <img src="imgs/formulario_abrir_chamado.png" width="70" height="70">
+                  </a>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                  <img src="imgs/formulario_consultar_chamado.png" width="70" height="70">
+                  <a href="consultarChamado.php">
+                    <img src="imgs/formulario_consultar_chamado.png" width="70" height="70">      
+                  </a>
                 </div>
               </div>
             </div>
