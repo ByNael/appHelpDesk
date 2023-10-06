@@ -1,4 +1,6 @@
-<? require_once("validadorAcesso.php") ?>
+<?php
+    require_once "validadorAcesso.php";
+?>
 
 <html>
   <head>
@@ -20,9 +22,14 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        <img src="/imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="logoff.php">SAIR</a>
+        </li>
+      </ul>
     </nav>
 
     <div class="container">    
