@@ -5,7 +5,7 @@
 
     $texto = $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
 
-    $arquivo = fopen('arquivo.txt', 'a');
+    $arquivo = fopen('arquivo.hd', 'a');
 
     fwrite($arquivo, $texto);
 
