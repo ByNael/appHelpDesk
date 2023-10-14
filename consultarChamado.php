@@ -4,8 +4,31 @@
     $arquivo = fopen('arquivo.hd', 'r');
 
     while(!feof($arquivo)) { //percorre cada linha do arquivo até encontrar o eof(end of file)
-        $registro = fgets($arquivo);
-        $chamados[] = $registro;
+        if($_SESSION['perfilId'] == 2){
+          $registro = fgets($arquivo);
+
+          $testes = explode('#', $registro);
+          if($_SESSION['id'] != $testes[0] || count($testes) < 3){
+            continue;
+          }
+
+          $chamados[] = $registro;
+        } else {
+          $registro = fgets($arquivo);
+          $chamados[] = $registro;
+
+          //foreach($chamadosTeste as $chamadoTeste){
+            //$teste = explode('#', $chamadoTeste);
+
+            //if(count($teste) < 3){
+              //continue;
+            //} else {
+                //$chamados[] = $registro;
+            //}
+          //} 
+
+          //ainda precisa ser implantada logica para chamados com "defeito"
+        }
     }
 
     fclose($arquivo);
@@ -52,19 +75,10 @@
             
             <div class="card-body">
               
-            <?php foreach($chamados as $chamado) { 
-                $chamadoDados = explode('#', $chamado);  
-
-                //o chamado só sera exibido se tiver sido criado pelo usuario
-                if($_SESSION['perfilId'] == 2){
-                  if($_SESSION['id'] != $chamadoDados[0]){
-                    continue;
-                  }
-                }
-
-                if(count($chamadoDados) < 3){
-                  continue;
-                }
+            <?php 
+              foreach($chamados as $chamado) { 
+                $chamadoDados = explode('#', $chamado); 
+                // print_r($chamadoDados); 
             ?>
 
               <div class="card mb-3 bg-light">
